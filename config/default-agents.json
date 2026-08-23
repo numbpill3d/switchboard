@@ -1,0 +1,108 @@
+{
+  "agents": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "command": "claude",
+      "args": [],
+      "cwd": "~",
+      "glyph": "✳",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "esc to interrupt|Thinking…|Herding|Puzzling|Percolating|Cogitating|Ruminating|[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]",
+        "waiting": "Do you want|❯ 1\\.|Yes, and|No, and tell|\\(y/n\\)|Press enter",
+        "typing": null
+      }
+    },
+    {
+      "id": "opencode",
+      "name": "opencode",
+      "command": "opencode",
+      "args": [],
+      "cwd": "~",
+      "glyph": "◇",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "working|thinking|[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]",
+        "waiting": "\\(y/n\\)|\\[Y/n\\]|continue\\?|approve",
+        "typing": null
+      }
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "command": "codex",
+      "args": [],
+      "cwd": "~",
+      "glyph": "⌘",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "thinking|working|running|[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]",
+        "waiting": "allow command\\?|approve|\\(y/n\\)|\\[y/N\\]",
+        "typing": null
+      }
+    },
+    {
+      "id": "openclaw",
+      "name": "openclaw",
+      "command": "openclaw",
+      "args": [],
+      "cwd": "~",
+      "glyph": "◈",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]|working|thinking",
+        "waiting": "\\(y/n\\)|approve|confirm",
+        "typing": null
+      }
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "command": "crush",
+      "args": [],
+      "cwd": "~",
+      "glyph": "❖",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]|thinking|working",
+        "waiting": "\\(y/n\\)|approve|confirm",
+        "typing": null
+      }
+    },
+    {
+      "id": "aider",
+      "name": "aider",
+      "command": "aider",
+      "args": [],
+      "cwd": "~",
+      "glyph": "✦",
+      "accent": "#000000",
+      "patterns": {
+        "thinking": "Tokens:|Applied edit|Committing|[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]",
+        "waiting": "\\(Y\\)es/\\(N\\)o|\\? |Add .+ to the chat|Allow",
+        "typing": null
+      }
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "command": "bash",
+      "args": ["-lc", "echo 'Hermes ledger shell. Vault: ~/Documents/Hermes Ledger'; cd ~/Documents/Hermes\\ Ledger 2>/dev/null; exec bash"],
+      "cwd": "~/Documents/Hermes Ledger",
+      "glyph": "☿",
+      "accent": "#000000",
+      "patterns": { "thinking": null, "waiting": null, "typing": null }
+    },
+    {
+      "id": "shell",
+      "name": "Shell",
+      "command": "bash",
+      "args": ["-l"],
+      "cwd": "~",
+      "glyph": "▓",
+      "accent": "#000000",
+      "patterns": { "thinking": null, "waiting": null, "typing": null }
+    }
+  ]
+}

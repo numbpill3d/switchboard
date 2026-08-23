@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'">
+<link rel="stylesheet" href="../node_modules/@xterm/xterm/css/xterm.css">
+<link rel="stylesheet" href="styles.css">
+<title>Switchboard</title>
+</head>
+<body data-theme="classic" class="anim-on">
+  <!-- CRT overlay (phosphor/amber themes, optional) -->
+  <div id="crt" aria-hidden="true"></div>
+
+  <!-- Title bar (classic Mac) -->
+  <div id="titlebar">
+    <button id="zoombox" class="mac-box" title="Settings (Ctrl+,)"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></button>
+    <button id="pinbox" class="mac-box" title="Toggle always-on-top">▲</button>
+    <div id="titlelines"></div>
+    <div id="title">Switchboard</div>
+    <div id="titlelines2"></div>
+    <button id="closebox" class="mac-box" title="Close (Ctrl+Q)">✕</button>
+  </div>
+
+  <!-- Tab strip -->
+  <div id="tabstrip">
+    <div id="tabs"></div>
+    <button id="newtab" title="New agent (Ctrl+T)">+</button>
+  </div>
+
+  <!-- Terminal stack -->
+  <div id="stack">
+    <div id="empty">
+      <div class="empty-inner">
+        <div class="empty-glyph">☎</div>
+        <div>No line open.</div>
+        <div class="empty-sub">Press <b>+</b> to connect an agent.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status footer -->
+  <div id="footer">
+    <span id="foot-state"><span class="dot dot-grey"></span><span id="foot-label">idle</span></span>
+    <span id="foot-cpu"></span>
+    <span id="foot-clock"></span>
+  </div>
+
+  <!-- New-agent chooser -->
+  <div id="chooser" class="overlay hidden">
+    <div class="dialog">
+      <div class="dialog-title"><span class="t">Connect an agent</span></div>
+      <div id="chooser-list" class="chooser-list"></div>
+      <div class="dialog-buttons">
+        <button id="chooser-settings" class="mac-btn">Edit agents…</button>
+        <button id="chooser-cancel" class="mac-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <div id="settings" class="overlay hidden">
+    <div class="dialog dialog-lg">
+      <div class="dialog-title"><span class="t">Control Panel</span><button id="settings-close" class="mac-box tiny">✕</button></div>
+      <div class="settings-tabs">
+        <button class="stab active" data-pane="appearance">Appearance</button>
+        <button class="stab" data-pane="animation">Animation</button>
+        <button class="stab" data-pane="detection">Detection</button>
+        <button class="stab" data-pane="agents">Agents</button>
+        <button class="stab" data-pane="window">Window</button>
+      </div>
+      <div class="settings-body">
+        <div class="pane active" data-pane="appearance"></div>
+        <div class="pane" data-pane="animation"></div>
+        <div class="pane" data-pane="detection"></div>
+        <div class="pane" data-pane="agents"></div>
+        <div class="pane" data-pane="window"></div>
+      </div>
+      <div class="dialog-buttons">
+        <button id="settings-save" class="mac-btn default">Save</button>
+        <button id="settings-cancel" class="mac-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../node_modules/@xterm/xterm/lib/xterm.js"></script>
+  <script src="../node_modules/@xterm/addon-fit/lib/addon-fit.js"></script>
+  <script src="../node_modules/@xterm/addon-web-links/lib/addon-web-links.js"></script>
+  <script src="themes.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

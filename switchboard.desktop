@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Switchboard
+GenericName=AI Agent Multiplexer
+Comment=Talk to Claude, opencode, codex, openclaw, crush, aider in tabs with live state
+Exec=__EXEC__
+Icon=switchboard
+Terminal=false
+Categories=Utility;
+StartupWMClass=switchboard
+StartupNotify=true
+Keywords=ai;agent;claude;terminal;multiplexer;codex;opencode;aider;

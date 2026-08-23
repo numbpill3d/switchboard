@@ -1,0 +1,22 @@
+{
+  "name": "switchboard",
+  "version": "1.0.0",
+  "description": "A calculator-sized AI-agent multiplexer with a classic Macintosh UI. Runs Claude, opencode, codex, openclaw, crush, aider (or any CLI agent) in tabs, each with live typing/thinking/waiting/paused state.",
+  "author": "scorn",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --no-sandbox --ozone-platform-hint=auto .",
+    "start:x11": "electron --no-sandbox --ozone-platform-hint=x11 .",
+    "rebuild": "bash ./rebuild-pty.sh"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "@xterm/xterm": "^5.5.0",
+    "node-pty": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
