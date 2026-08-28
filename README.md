@@ -7,7 +7,7 @@ typing, thinking, waiting for you, or paused, colored under its tab title.
 
 built with electron + node-pty + xterm.js. monochrome by default, fully themable.
 
-![switchboard](assets/icon-128.png)
+![switchboard — four agent tabs (claude, opencode, codex, aider) in the classic macintosh chrome, with live per-tab status dots and labels](assets/screenshot.png)
 
 ---
 
