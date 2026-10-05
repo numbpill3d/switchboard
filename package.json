@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "main.js",
   "scripts": {
+    "check": "node --check main.js && node --check preload.js && node --check src/renderer.js && node --check src/themes.js",
     "start": "electron --no-sandbox --ozone-platform-hint=auto .",
     "start:x11": "electron --no-sandbox --ozone-platform-hint=x11 .",
     "rebuild": "bash ./rebuild-pty.sh"
