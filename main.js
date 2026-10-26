@@ -10,6 +10,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 const { execSync } = require('child_process');
+const { buildAgentShellCommand } = require('./src/session-command');
 
 let pty;
 try { pty = require('node-pty'); }
@@ -137,9 +138,7 @@ function createSession(id, profile) {
     // run the agent inside a login shell so PATH/rc are loaded; keep the tab
     // alive with a fallback shell if the agent exits or is missing.
     file = '/bin/bash';
-    const inner = [profile.command, ...(profile.args || [])]
-      .map(a => `'${String(a).replace(/'/g, `'\\''`)}'`).join(' ');
-    args = ['-lc', `${inner}; echo; echo "[${profile.name} exited — starting shell]"; exec bash -l`];
+    args = ['-lc', buildAgentShellCommand(profile)];
   }
 
   let proc;
